@@ -41,7 +41,6 @@ sweatsuit_picker = st.selectbox(
 
 
 
-    
 # if ingredients_list:
 #     ingredients_string = ''
 
