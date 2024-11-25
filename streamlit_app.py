@@ -14,9 +14,9 @@ st.title("Zena's Amazing Athleisure Catalog")
 
 cnx = st.connection("snowflake")
 # session = cnx.session()
-sdf = cnx.query("select color_or_style, file_url from zenas_athleisure_db.products.catalog group by 1,2")
-df = sdf.to_pandas()
-st.stop()
+df = cnx.query("select color_or_style, file_url from zenas_athleisure_db.products.catalog group by 1,2")
+# df = sdf.to_pandas()
+# st.stop()
 # df = session.sql("select * from table()").to_pandas()
 
 
