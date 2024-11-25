@@ -13,8 +13,9 @@ st.title("Zena's Amazing Athleisure Catalog")
 # st.write('The name on your Smoothie will be:', name_on_order)
 
 cnx = st.connection("snowflake")
-session = cnx.session()
-df = session.sql("select * from table(select color_or_style, file_url from zenas_athleisure_db.products.catalog group by 1,2)").to_pandas()
+# session = cnx.session()
+df = cnx.query("select color_or_style, file_url from zenas_athleisure_db.products.catalog group by 1,2").to_pandas()
+# df = session.sql("select * from table()").to_pandas()
 
 
 # cnx = st.connection("snowflake")
