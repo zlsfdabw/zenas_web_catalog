@@ -38,7 +38,7 @@ sweatsuit_picker = st.selectbox(
 )
 
 
-st.stop()
+# st.stop()
 
 if sweatsuit_picker:
     file_url = df.loc[df['COLOR_OR_STYLE'] == sweatsuit_picker, 'stg_img_path'].iloc[0]
