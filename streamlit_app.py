@@ -14,14 +14,19 @@ st.title("Zena's Amazing Athleisure Catalog")
 
 cnx = st.connection("snowflake")
 session = cnx.session()
-my_dataframe = session.table("zenas_athleisure_db.products.catalog")
-# st.dataframe(data=my_dataframe, use_container_width=True)
-# st.stop()
+df = session.sql("select * from table(select color_or_style, file_url from zenas_athleisure_db.products.catalog group by 1,2)").to_pandas()
 
-# Convert the Snowpark Dataframe to a Pandas Dataframe so we can use the LOC function
-df = my_dataframe.to_pandas()
-st.dataframe(data=df, use_container_width=True)
-# st.stop()
+
+# cnx = st.connection("snowflake")
+# session = cnx.session()
+# my_dataframe = session.table("zenas_athleisure_db.products.catalog")
+# # st.dataframe(data=my_dataframe, use_container_width=True)
+# # st.stop()
+
+# # Convert the Snowpark Dataframe to a Pandas Dataframe so we can use the LOC function
+# df = my_dataframe.to_pandas()
+# st.dataframe(data=df, use_container_width=True)
+# # st.stop()
 
 sweatsuit_picker = st.selectbox(
     'Pick a sweatsuit color or style:'
