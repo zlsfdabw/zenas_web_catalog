@@ -25,7 +25,7 @@ st.dataframe(data=df, use_container_width=True)
 
 sweatsuit_picker = st.selectbox(
     'Pick a sweatsuit color or style:'
-    ,df.color_or_style
+    ,df["COLOR_OR_STYLE"]
 )
 
 st.stop()
