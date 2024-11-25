@@ -33,8 +33,3 @@ sweatsuit_picker = st.selectbox(
     'Pick a sweatsuit color or style:'
     ,my_dataframe
 
-# ingredients_list = st.multiselect(
-#     'Choose up to 5 ingredients:'
-#     ,my_dataframe
-#     ,max_selections=5
-# )
