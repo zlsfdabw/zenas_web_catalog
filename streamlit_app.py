@@ -15,10 +15,10 @@ st.title("Zena's Amazing Athleisure Catalog")
 
 cnx = st.connection("snowflake")
 session = cnx.session()
-df = cnx.query("select color_or_style, '@sweatsuits/' || file_name as stg_img_path from zenas_athleisure_db.products.catalog group by 1,2")
+df = cnx.query("select color_or_style, '@zenas_athleisure_db/products/sweatsuits/' || file_name as stg_img_path from zenas_athleisure_db.products.catalog group by 1,2")
 
-st.dataframe(df)
-st.stop()
+# st.dataframe(df)
+# st.stop()
 
 # df = sdf.to_pandas()
 # st.stop()
