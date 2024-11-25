@@ -15,7 +15,7 @@ st.title("Zena's Amazing Athleisure Catalog")
 
 cnx = st.connection("snowflake")
 session = cnx.session()
-df = cnx.query("select color_or_style, '@zenas_athleisure_db/products/sweatsuits/' || file_name as stg_img_path from zenas_athleisure_db.products.catalog group by 1,2")
+df = cnx.query("select color_or_style, file_url from zenas_athleisure_db.products.catalog group by 1,2")
 
 # st.dataframe(df)
 # st.stop()
@@ -45,9 +45,9 @@ sweatsuit_picker = st.selectbox(
 # st.stop()
 
 if sweatsuit_picker:
-    file_url = df.loc[df['COLOR_OR_STYLE'] == sweatsuit_picker, 'STG_IMG_PATH'].iloc[0]
+    file_url = df.loc[df['COLOR_OR_STYLE'] == sweatsuit_picker, 'FILE_URL'].iloc[0]
     # st.write(file_url)
-    st.image(file_url)
+    st.image(image=file_url,width=200)
     # render_image(file_url)
 
 st.stop()
