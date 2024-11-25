@@ -20,7 +20,7 @@ st.dataframe(data=my_dataframe, use_container_width=True)
 
 # Convert the Snowpark Dataframe to a Pandas Dataframe so we can use the LOC function
 df = my_dataframe.to_pandas()
-# st.dataframe(df)
+st.dataframe(df)
 # st.stop()
 
 sweatsuit_picker = st.selectbox(
