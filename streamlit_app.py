@@ -32,3 +32,4 @@ st.stop()
 sweatsuit_picker = st.selectbox(
     'Pick a sweatsuit color or style:'
     ,my_dataframe
+)
